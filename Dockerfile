@@ -6,9 +6,9 @@ COPY . .
 
 RUN dotnet restore "WorkshopSystem.API/WorkshopSystem.API.csproj"
 
-RUN dotnet publish "WorkshopSystem.API/WorkshopSystem.API.csproj" `
-    -c Release `
-    -o /app/publish `
+RUN dotnet publish "WorkshopSystem.API/WorkshopSystem.API.csproj" \
+    -c Release \
+    -o /app/publish \
     /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
